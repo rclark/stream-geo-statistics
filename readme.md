@@ -15,7 +15,9 @@ fs.createReadStream('my-feature-collection.geojson')
     .pipe(geoStatistics())       // Collects statistics and passes features through
     .pipe(myPipeline);           // Recieves features and does whatever to them
 
-var stats = geoStatistics.getStats();
+myPipeline.on('finish', function() {
+    var stats = geoStatistics.getStats();    
+});
 ```
 ## Usage
 
@@ -27,9 +29,9 @@ var stats = geoStatistics.getStats();
     - `duplicates`: as statistics on the number of duplicate coordinates per feature
     - `coordinates`: as statistics on the number of coordinates per feature
     - `features`: the number of features that have come through
-    - `tiles`: spherical-mercator tiles as an array of strings of `[ "z/x/y" ]` covering all features
+    - `tiles`: spherical-mercator tiles as an array of `[ "z/x/y" ]` covering all features
 
-- Each "statistics" object (e.g. `coordinates`) is a data collected from a [stream-statistics](https://github.com/tmcw/stream-statistics) object that presents min, max, sum, mean, mode, variance, standard_deviation, geometric_mean and harmonic_mean.
+- Each "statistics" object (e.g. `coordinates`) is data collected from a [stream-statistics](https://github.com/tmcw/stream-statistics) object that presents min, max, sum, mean, mode, variance, standard_deviation, geometric_mean and harmonic_mean.
 
 ## Options
 
