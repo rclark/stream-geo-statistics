@@ -1,0 +1,29 @@
+{
+  "name": "stream-geo-statistics",
+  "version": "0.0.1",
+  "description": "streaming geo-statistics about GeoJSON",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rclark/stream-geo-statistics.git"
+  },
+  "author": "Ryan Clark",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rclark/stream-geo-statistics/issues"
+  },
+  "homepage": "https://github.com/rclark/stream-geo-statistics",
+  "dependencies": {
+    "through2": "^0.4.1",
+    "sphericalmercator": "^1.0.2",
+    "underscore": "^1.6.0",
+    "stream-statistics": "^0.4.0",
+    "spherical": "0.0.1"
+  },
+  "devDependencies": {
+    "geojson-stream": "0.0.0"
+  }
+}
