@@ -13,7 +13,7 @@ var fs = require('fs');
 fs.createReadStream('my-feature-collection.geojson')
     .pipe(geojsonStream.parse()) // Processes file as discrete features
     .pipe(geoStatistics())       // Collects statistics and passes features through
-    .pipe(myPipeline);           // Recieves features and does whatever to them
+    .pipe(myPipeline);           // Receives features and does whatever to them
 
 myPipeline.on('finish', function() {
     var stats = geoStatistics.getStats();    
