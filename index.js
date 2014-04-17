@@ -83,6 +83,8 @@ module.exports = function(options) {
 
     // Additional API function to get the underlying statistics object
     geoStats.getStats = function() {
+        if (!geoStats._stats) return null;
+        
         var stats = {
             bbox: geoStats._stats.bbox,
             density: geoStats._stats.density._stats,
